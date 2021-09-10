@@ -1,4 +1,5 @@
-import { PageComponent } from './components/page';
+import { ImageComponent } from './components/page/item/image.js';
+import { PageComponent } from './components/page/page.js';
 
 class App{
     private readonly page: PageComponent;
@@ -6,6 +7,8 @@ class App{
         this.page = new PageComponent();
         this.page.attachTo(appRoot) //만들어진 page를 appRoot에 붙여준다
 
+        const image = new ImageComponent('Image Title', 'https://picsum.photos/seed/picsum/600/300');
+        image.attachTo(appRoot, 'beforeend') //마지막에 추가
     }
 }
 
